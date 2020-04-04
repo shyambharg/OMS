@@ -1,0 +1,29 @@
+package com.example.service;
+
+import java.math.BigInteger;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.DAO.SalesCustomerDao;
+import com.example.DTO.Customer;
+
+@Service
+public class SalesCustomerServiceImplement implements SalesCustomerService {
+
+	@Autowired
+	private SalesCustomerDao objSalesCustomer;
+	@Override
+	public List<Map<String ,Object>> displayCustomerService(BigInteger salesPincode) {
+		return objSalesCustomer.displayCustomer(salesPincode);
+	}
+	@Override
+	public void approveCustomerService() {
+	objSalesCustomer.approveCustomer();	
+	}
+		
+	
+	
+}

@@ -1,0 +1,24 @@
+package com.example.DAO;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class ProductDaoImplement implements ProductDao{
+
+	@Override
+	public void createProduct(String productName, Double productCost, String productExist) {
+		
+	}
+
+	@Override
+	public void updateProductCost(String productName, Double productCost) {
+		
+	}
+
+	@Override
+	public void updateProductExist(String productName, String productExist) {
+		
+	}
+	
+	
+}

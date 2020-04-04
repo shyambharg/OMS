@@ -1,0 +1,8 @@
+package com.example.feign.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="Order-Service",url="http://localhost:8093")
+public interface OrderClient {
+
+}

@@ -1,0 +1,7 @@
+package com.example.DAO;
+
+public interface ProductDao {
+	
+		public void createProduct(String productName,Double productCost,String productExist);
+		
+}

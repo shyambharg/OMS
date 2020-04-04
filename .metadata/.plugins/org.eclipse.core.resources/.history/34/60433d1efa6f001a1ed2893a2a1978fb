@@ -1,0 +1,14 @@
+package com.example.DAO;
+
+public interface CustomerDao {
+	
+	public void createCustomer(String customerName,String customerEmail,String customerPassword,Integer customerPhone,Integer customerPincode);
+	
+	public void updateCustomer(String customerEmail,String customerNewName,String customerNewEmail,String customerNewPassword,Integer customerNewPhone,Integer customerNewPincode);
+	
+	
+//	public void orderByCustomer();
+//	
+//	public void modifyOrderByCustomer();
+
+}

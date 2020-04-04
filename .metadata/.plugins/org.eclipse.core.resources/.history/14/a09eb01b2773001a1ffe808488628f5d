@@ -1,0 +1,51 @@
+package com.example.DAO;
+
+import java.math.BigInteger;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.example.DTO.Order;
+import com.example.DTO.Product;
+import com.example.mapper.OrderMapper;
+import com.example.mapper.ProductMapper;
+
+@Repository
+public class OrderDaoImplement implements OrderDao {
+
+	@Autowired
+	private JdbcTemplate jdbcTemplateObject;
+	
+	
+	@Override
+	public void createOrder( String customerEmail, BigInteger productId) {
+		
+		String SQL = "insert into order (productId,customerEmail) values ((select productId from where productId = ?),(select customerEmail from customer where customerEmail = ?)";
+		jdbcTemplateObject.update(SQL,customerEmail,productId);
+	}
+
+	@Override
+	public List<Order> displayOrder() {
+		String SQL = "select * from customerorder";
+		List <Order> objOrder = jdbcTemplateObject.query(SQL,new OrderMapper());
+		return objOrder;
+	}
+
+	@Override
+	public List<Map<String, Object>> displayByCustomerEmail(String customerEmail) {
+			String SQL= "select order.orderId,order.productId,product.* ,customer.* from order join on productId join on customerEmail where customerEmail=?";
+			List<Map<String,Object>> objList= jdbcTemplateObject.queryForList(SQL,customerEmail);
+			return objList;
+	}
+
+	@Override
+	public List<Product> displayProduct() {
+		String SQL = "select * from product";
+		List <Product> objOrder = jdbcTemplateObject.query(SQL,new ProductMapper());
+		return objOrder;
+	}
+
+}

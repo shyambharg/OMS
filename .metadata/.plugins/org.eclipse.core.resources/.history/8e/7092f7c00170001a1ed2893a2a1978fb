@@ -1,0 +1,13 @@
+package com.example.DAO;
+
+import java.math.BigInteger;
+
+
+public interface SalesCustomerDao {
+	
+	public void displayCustomer(BigInteger salesPincode);
+	String SQL = "select customerEmail from customer where customerPincode = ?";
+    Customer objSalesman = (Salesman)jdbcTemplateObject.queryForObject(SQL,new Object[]{salesEmail},new SalesmanMapper());
+    return objSalesman;
+	
+}

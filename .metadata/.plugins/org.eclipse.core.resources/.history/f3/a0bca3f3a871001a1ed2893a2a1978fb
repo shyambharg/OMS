@@ -1,0 +1,14 @@
+package com.example.feign.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Repository
+@FeignClient(name="Product-Service",url="http://localhost:8093")
+public interface ProductClient {
+	
+	@GetMapping(value="/feignget")
+	public String display();
+	
+}

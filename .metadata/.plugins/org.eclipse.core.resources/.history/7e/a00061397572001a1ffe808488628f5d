@@ -1,0 +1,14 @@
+package com.example.DAO;
+
+import java.math.BigInteger;
+import java.util.List;
+
+import com.example.DTO.Order;
+
+public interface OrderDao {
+	
+	public void createOrder(String productName,String customerEmail,BigInteger productId);
+	
+	public List<Order> displayOrder();
+	
+}

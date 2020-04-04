@@ -1,0 +1,30 @@
+package com.example.mapper;
+
+import java.math.BigInteger;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import com.example.DTO.Order;
+import com.example.DTO.Product;
+
+public class OrderMapper implements RowMapper<Order> {
+
+	@Override
+	public Order mapRow(ResultSet rs, int rowNum) throws SQLException {
+		Order objOrder = new Order();
+		objOrder.setOrderId(BigInteger.valueOf(rs.getInt("orderId")));
+		objOrder.setCustomerEmail(rs.getString("customerEmail"));
+		objOrder.setProductId(BigInteger.valueOf(rs.getInt("productId")));
+		Product objProduct = new Product();
+		objProduct.setProductId(BigInteger.valueOf(rs.getInt("productId")));
+		objProduct.setProductName(rs.getString("product.productName"));
+		objProduct.setProductCost(rs.getDouble("product.productCost"));
+		objProduct.setProductExist(rs.getString("product.productExist"));
+		objProduct.setProductCategory(rs.getString("product.productCategory"));
+		objOrder.setObjProduct(objProduct);
+		return objOrder;
+	}
+
+}

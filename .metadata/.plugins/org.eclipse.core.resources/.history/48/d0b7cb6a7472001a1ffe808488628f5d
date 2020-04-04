@@ -1,0 +1,12 @@
+package com.example.DTO;
+
+import java.math.BigInteger;
+
+public class Order {
+	
+	BigInteger orderId;
+	String productName;
+	String customerEmail;
+	BigInteger productId;
+	
+}

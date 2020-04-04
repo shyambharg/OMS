@@ -1,0 +1,19 @@
+package com.example.DAO;
+
+import java.math.BigInteger;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.example.DTO.Customer;
+
+
+public interface SalesCustomerDao {
+	
+	
+	public List<Map<String ,Object>> displayCustomer(BigInteger salesPincode);
+	
+	public void approveCustomer();
+}

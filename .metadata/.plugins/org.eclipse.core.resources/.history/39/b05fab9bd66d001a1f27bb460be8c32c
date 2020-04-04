@@ -1,0 +1,13 @@
+package com.example.DAO;
+
+public interface CustomerDao {
+	
+	public void createCustomer();
+	
+	public void updateCustomer();
+	
+	public void orderByCustomer();
+	
+	public void modifyOrderByCustomer();
+
+}

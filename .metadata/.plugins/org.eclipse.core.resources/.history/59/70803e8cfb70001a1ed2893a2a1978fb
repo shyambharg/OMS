@@ -1,0 +1,15 @@
+package com.example.feign.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.feign.config.CustomerFeignConfig;
+
+@FeignClient(name="Product-Service", configuration = CustomerFeignConfig.class)
+
+public interface ProductClient {
+	
+	@GetMapping(value="/products")
+	public String display();
+	
+}

@@ -1,0 +1,23 @@
+package com.example.service;
+
+import java.math.BigInteger;
+import java.util.List;
+import java.util.Map;
+
+import com.example.DTO.Product;
+
+public interface ProductService {
+	
+	public void createProductService(String productName,Double productCost,String productExist,String productCategory);
+	
+	public void updateProductCostService(String productName,Double productCost);
+	
+	public void updateProductExistService(String productName,String productExist);
+	
+	public List<Product> displayProductService();
+	
+	public List<Map<String ,Object>> displayProductCategorywiseService(String productCategory);
+	
+
+	
+}

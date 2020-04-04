@@ -1,0 +1,9 @@
+package com.example.DAO;
+
+import java.math.BigInteger;
+
+public interface SalesCustomerDao {
+	
+	public void displayCustomer(BigInteger salesPincode);
+	
+}

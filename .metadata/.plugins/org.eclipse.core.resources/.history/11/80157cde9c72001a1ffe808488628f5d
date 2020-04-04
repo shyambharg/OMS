@@ -1,0 +1,17 @@
+package com.example.feign.client;
+
+import java.math.BigInteger;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@FeignClient(name="Order-Service",url="http://localhost:8093")
+public interface OrderClient {
+	
+	@RequestMapping(value="order/createorder",method=RequestMethod.POST)
+	public void create(@RequestParam String productName,@RequestParam String customerEmail,@RequestParam BigInteger productId);	
+	
+
+}

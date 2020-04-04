@@ -1,0 +1,32 @@
+package com.example.DTO;
+
+import java.math.BigInteger;
+
+public class Order {
+	
+	BigInteger orderId;
+	String customerEmail;
+	BigInteger productId;
+	
+	
+	public BigInteger getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(BigInteger orderId) {
+		this.orderId = orderId;
+	}
+	public String getCustomerEmail() {
+		return customerEmail;
+	}
+	public void setCustomerEmail(String customerEmail) {
+		this.customerEmail = customerEmail;
+	}
+	public BigInteger getProductId() {
+		return productId;
+	}
+	public void setProductId(BigInteger productId) {
+		this.productId = productId;
+	}
+	
+	
+}

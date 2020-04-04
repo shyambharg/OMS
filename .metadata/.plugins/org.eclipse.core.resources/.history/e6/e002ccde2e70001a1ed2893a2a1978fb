@@ -1,0 +1,11 @@
+package com.example.service;
+
+import java.math.BigInteger;
+import java.util.List;
+
+import com.example.DTO.Customer;
+
+public interface SalesCustomerService {
+
+	public List<Customer> displayCustomerService(BigInteger salesPincode);
+}

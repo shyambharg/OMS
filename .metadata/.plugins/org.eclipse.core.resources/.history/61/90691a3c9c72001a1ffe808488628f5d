@@ -1,0 +1,5 @@
+package com.example.feign.client;
+
+public interface OrderClient {
+
+}

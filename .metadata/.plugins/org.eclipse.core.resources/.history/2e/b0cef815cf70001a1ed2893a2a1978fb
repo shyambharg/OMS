@@ -1,0 +1,12 @@
+package com.example.feign;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+import com.example.feign.config.CustomerFeignConfig;
+
+@FeignClient(name="product-service", configuration = CustomerFeignConfig.class)
+
+public interface ProductClient {
+
+	
+}

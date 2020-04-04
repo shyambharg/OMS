@@ -1,0 +1,36 @@
+package com.example.DAO;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class ProductDaoImplement implements ProductDao{
+
+	@Autowired
+	private JdbcTemplate jdbcTemplateObject;
+	
+	@Override
+	public void createProduct(String productName, Double productCost, String productExist) {
+		String SQL = "insert into product (productName,productCost,productExist) values (?, ?, ?)";
+	      
+		 jdbcTemplateObject.update( SQL,productName,productCost,productExist);
+		
+	}
+
+	@Override
+	public void updateProductCost(String productName, Double productCost) {
+		
+		String SQL = "update product set productCost=? where productName = ?";
+	      jdbcTemplateObject.update(SQL,productCost,productName);
+
+		
+	}
+
+	@Override
+	public void updateProductExist(String productName, String productExist) {
+		
+	}
+	
+	
+}

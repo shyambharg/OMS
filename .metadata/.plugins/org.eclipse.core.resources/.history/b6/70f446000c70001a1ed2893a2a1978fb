@@ -1,0 +1,52 @@
+package com.example.DTO;
+
+import java.math.BigInteger;
+
+public class Customer {
+	Integer customerId;
+	String customerName;
+	String customerEmail;
+	String customerPassword;
+	BigInteger customerPhone;
+	BigInteger customerPincode;
+	
+	
+	public Integer getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
+	}
+	public String getCustomerName() {
+		return customerName;
+	}
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+	public String getCustomerEmail() {
+		return customerEmail;
+	}
+	public void setCustomerEmail(String customerEmail) {
+		this.customerEmail = customerEmail;
+	}
+	public String getCustomerPassword() {
+		return customerPassword;
+	}
+	public void setCustomerPassword(String customerPassword) {
+		this.customerPassword = customerPassword;
+	}
+	public Integer getCustomerPhone() {
+		return customerPhone;
+	}
+	public void setCustomerPhone(Integer customerPhone) {
+		this.customerPhone = customerPhone;
+	}
+	public Integer getCustomerPincode() {
+		return customerPincode;
+	}
+	public void setCustomerPincode(Integer customerPincode) {
+		this.customerPincode = customerPincode;
+	}
+	
+
+}

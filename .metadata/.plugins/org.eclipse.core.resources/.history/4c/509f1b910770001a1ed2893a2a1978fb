@@ -1,0 +1,12 @@
+package com.example.rest;
+
+import java.math.BigInteger;
+import java.util.List;
+
+import com.example.DTO.Customer;
+
+public class SalesCustomerController {
+	
+	public List<Customer> displayCustomer(BigInteger salesPincode);
+
+}

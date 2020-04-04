@@ -1,0 +1,37 @@
+package com.example.rest;
+
+import java.math.BigInteger;
+import java.util.List;
+import java.util.Map;
+
+import javax.ws.rs.core.MediaType;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.DTO.Customer;
+import com.example.service.SalesCustomerService;
+
+@RestController
+public class SalesCustomerController {
+	
+	@Autowired
+	private SalesCustomerService objSalesCustomer;
+	
+	@RequestMapping(produces = MediaType.APPLICATION_JSON,method = RequestMethod.GET,value = "admin/salesMan/listmycustomers")	
+	public List<Map<String ,Object>> list(@RequestParam BigInteger salesPincode){
+		return objSalesCustomer.displayCustomerService(salesPincode);
+	}
+	
+	@RequestMapping(method = RequestMethod.PUT, value = "admin/salesMan/approve")
+	public void approve()
+	{
+		objSalesCustomer.approveCustomerService();
+	}
+	
+	
+
+}

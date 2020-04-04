@@ -1,0 +1,27 @@
+package com.example.DAO;
+
+import java.math.BigInteger;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.example.DTO.Customer;
+import com.example.mapper.CustomerMapper;
+
+public class SalesCustomerDaoImplement implements SalesCustomerDao {
+
+	
+	@Autowired
+	private JdbcTemplate objJdbcTemplate;
+	
+	@Override
+	public List<Customer> displayCustomer(BigInteger salesPincode)
+		{
+		String SQL = "select customerEmail from customer where customerPincode = ?";
+	    Customer objCustomer = (Customer)objJdbcTemplate.queryForObject(SQL,new Object[]{salesPincode},new CustomerMapper());
+	    return objCustomer;
+	
+		}
+	
+	
+}

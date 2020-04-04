@@ -1,0 +1,12 @@
+package com.example.DTO;
+
+import java.math.BigInteger;
+
+public class Product {
+	
+	BigInteger productId;
+	String productName;
+	Double productCost;
+	String productExist;
+	
+}

@@ -1,0 +1,46 @@
+package com.example.rest;
+
+import java.math.BigInteger;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.feign.client.ProductClient;
+import com.example.service.CustomerService;
+
+@RestController
+public class CustomerController {
+	
+	//private CustomerService objCustomerService;
+	@Autowired
+	private ProductClient objProductClient;
+	
+//	
+//	@RequestMapping(value="customer/create",method=RequestMethod.POST)
+//	public void create(@RequestParam String customerName,@RequestParam String customerEmail,@RequestParam String customerPassword,@RequestParam BigInteger customerPhone,@RequestParam BigInteger customerPincode)
+//	{
+//		objCustomerService.createCustomerService(customerName, customerEmail, customerPassword, customerPhone, customerPincode);
+//	}
+//	
+//	@RequestMapping(value ="customer/update",method = RequestMethod.POST)
+//	public void update(@RequestParam String customerEmail,@RequestParam String customerNewName,@RequestParam String customerNewEmail,@RequestParam String customerNewPassword,@RequestParam BigInteger customerNewPhone,@RequestParam BigInteger customerNewPincode)
+//	{
+//		objCustomerService.updateCustomerService(customerEmail, customerNewName, customerNewEmail, customerNewPassword, customerNewPhone, customerNewPincode);
+//	}
+//	
+//	@RequestMapping(value="/get",method = RequestMethod.GET)
+//	public String displayString()
+//	{
+//		return objProductClient.display();
+//	}
+
+	@RequestMapping(value="/gg",method = RequestMethod.GET)
+	public String display()
+	{
+		return "hiiii";
+	}
+}

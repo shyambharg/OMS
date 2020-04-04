@@ -1,0 +1,44 @@
+package com.example.DAO;
+
+import java.math.BigInteger;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class CustomerDaoImplement implements CustomerDao{
+
+	
+	@Autowired
+	private JdbcTemplate jdbcTemplateObject;
+	@Override
+	public void createCustomer(String customerName, String customerEmail, String customerPassword,
+			BigInteger customerPhone, BigInteger customerPincode) {
+		String SQL = "insert into customer (customerName, customerEmail, customerPhone, customerPincode, customerPassword ) values (?, ?, ?, ?, ?)";
+	      
+		 jdbcTemplateObject.update( SQL,customerName,customerEmail,customerPhone,customerPincode,customerPassword );
+		
+	}
+
+	@Override
+	public void updateCustomer(String customerEmail, String customerNewName, String customerNewEmail,
+			String customerNewPassword, BigInteger customerNewPhone, BigInteger customerNewPincode) {
+		
+		String SQL = "update customer set customerName=?, customerEmail=?, customerPhone=?, customerPincode =?, customerPassword=? where customerEmail = ?";
+	      jdbcTemplateObject.update(SQL,customerNewName,customerNewEmail,customerNewPhone,customerNewPincode,customerNewPassword,customerEmail);
+	
+	}
+
+	@Override
+	public List<Map<String,Object>> displayCustomerOrder(String customerEmail) {
+		String SQL= "select order.orderId,order.productId,product.* ,customer.* from order join on productId join on customerEmail where customerEmail=?";
+		List<Map<String,Object>> objList= jdbcTemplateObject.queryForList(SQL,customerEmail);
+		return objList;
+		
+	}
+	
+
+}
